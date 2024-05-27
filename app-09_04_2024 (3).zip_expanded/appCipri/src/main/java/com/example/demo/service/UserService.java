@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.User;
 
+//Indicamos en el codigo la lista de usuarios
+
 @Service
 public class UserService {
 
@@ -24,9 +26,13 @@ public class UserService {
 		users.add(user);
 	}
 	
+	//Devuelve toda la lista de usuarios
+	
 	public List<User> getAllUsers(){
 		return users;
 	}
+	
+	//Encontrar dicho usuario mediante su ID
 	
 	public User findById(Long id){
 		User found = null;
@@ -39,11 +45,14 @@ public class UserService {
 		return found;
 	}
 	
+	//Crear un usuario
+	
 	public User createUser(User user){
 		users.add(user);
 		return user;
 	}
 	
+	//Borrar un usuario con su ID
 	public boolean deleteUserById(Long id) {
 		User user = this.findById(id);
 		return users.remove(user);
